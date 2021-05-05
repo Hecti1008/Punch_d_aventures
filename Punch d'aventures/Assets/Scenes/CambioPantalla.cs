@@ -8,7 +8,7 @@ public class CambioPantalla : MonoBehaviour
 {
     private string movipantalla;
 
-    public void Movipantalla(string pantalla )
+    public void Movipantalla(string pantalla)
     {
         movipantalla = pantalla;
         SceneManager.LoadScene(pantalla);

@@ -5,10 +5,11 @@ using UnityEngine;
 public class punchmovemement : MonoBehaviour
 {
 
-    public float runSpeed = 2;
-    public float jumpSpeed = 3;
+    public float jumpForce;
+    public float speed;
 
-    Rigidbody2D rb2D;
+    private float horizontal;
+    private Rigidbody2D rb2D;
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +18,23 @@ public class punchmovemement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetKey("d") || Input.GetKey("right"))
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
+            Jump();
         }
-        else if (Input.GetKey("a") || Input.GetKey("left"))
-        {
-            rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
-        }
-        else
-        {
-            rb2D.velocity = new Vector2(0, rb2D.velocity.y);
-        }
-        if (Input.GetKey("space") && checkGround.isGrounded)
-        {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
-        }
+    }
+
+    private void Jump()
+    {
+        rb2D.AddForce(Vector2.up * jumpForce);
+    }
+
+    private void FixedUpdate()
+    {
+        rb2D.velocity = new Vector2(horizontal, rb2D.velocity.y);
     }
 }

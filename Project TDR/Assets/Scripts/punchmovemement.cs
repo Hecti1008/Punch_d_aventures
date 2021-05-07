@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovimientoPunch : MonoBehaviour
+public class punchmovemement : MonoBehaviour
 {
-    public float runspeed = 2;
-    public float jumpspeed = 3;
+
+    public float runSpeed = 2;
+    public float jumpSpeed = 3;
 
     Rigidbody2D rb2D;
-
 
     // Start is called before the first frame update
     void Start()
@@ -17,23 +17,23 @@ public class MovimientoPunch : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            rb2D.velocity = new Vector2(runspeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(runSpeed, rb2D.velocity.y);
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            rb2D.velocity = new Vector2(-runspeed, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(-runSpeed, rb2D.velocity.y);
         }
         else
         {
             rb2D.velocity = new Vector2(0, rb2D.velocity.y);
         }
-        if (Input.GetKey(KeyCode.Space) && CheckGround.isGrounded)
+        if (Input.GetKey("space") && checkGround.isGrounded)
         {
-            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpspeed);
+            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
         }
     }
 }

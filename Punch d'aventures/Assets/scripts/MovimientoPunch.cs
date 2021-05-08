@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class MovimientoPunch : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
-    private float Horizontal;
+    public float runspeed = 2;
+    public float jumpspeed = 3;
 
-    public float jumpForce;
-    public float speed;
-    private bool Grounded;
+    Rigidbody2D rb2D;
+
+    public SpriteRenderer spriteRender;
+
+    public Animator animator;
+
+
+    //public bool variableJump = false;
+    //public float fallMultiplier = 0.5f;
+    //public float lowJumpMultiplier = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,30 +27,52 @@ public class MovimientoPunch : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
-
-        Debug.DrawRay(transform.position, Vector3.down * 0.2f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.2f))
+        if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            Grounded = true;
+            rb2D.velocity = new Vector2(runspeed, rb2D.velocity.y);
+            spriteRender.flipX = false;
+            animator.SetBool("Run", true);
         }
-        else Grounded = false; 
-
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
+        else if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            Jump();
+            rb2D.velocity = new Vector2(-runspeed, rb2D.velocity.y);
+            spriteRender.flipX = true;
+            animator.SetBool("Run", true);
         }
-    }
+        else
+        {
+            rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+            animator.SetBool("Run", false);
+        }
+        if (Input.GetKey("space") && CheckGround.isGrounded)
+        {
+            rb2D.velocity = new Vector2(rb2D.velocity.x, jumpspeed);
+            animator.SetBool("Run", false);
+        }
 
-    private void Jump()
-    {
-        rb2D.AddForce(Vector2.up * jumpForce);
-    }
+        if (CheckGround.isGrounded==false)
+        {
+            animator.SetBool("Jump", true);
+            animator.SetBool("Run", false);
+        }
+        if (CheckGround.isGrounded==true)
+        {
+            animator.SetBool("Jump", false);
+        }
 
-    private void FixedUpdate()
-    {
-        rb2D.velocity = new Vector2(Horizontal, rb2D.velocity.y);
+        //No el fem servir per que no ens ha agradat
+        //if (variableJump)
+        //{
+        //    if (rb2D.velocity.y<0)
+        //    {
+        //        rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier) * Time.deltaTime;
+        //    }
+        //    if (rb2D.velocity.y>0 && Input.GetKey("space"))
+        //    {
+        //        rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier) * Time.deltaTime;
+        //    }
+        //}
     }
 }

@@ -23,13 +23,12 @@ public class MovimientoPunch : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal");
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
-
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        Debug.DrawRay(transform.position, Vector3.down * 0.2f, Color.red);
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.2f))
         {
             Grounded = true;
         }
-        else Grounded = false;
+        else Grounded = false; 
 
         if (Input.GetKeyDown(KeyCode.W) && Grounded)
         {

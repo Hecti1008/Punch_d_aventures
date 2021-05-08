@@ -10,6 +10,7 @@ public class MovimientoPunch : MonoBehaviour
 
     public float jumpForce;
     public float speed;
+    private bool Grounded;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,15 @@ public class MovimientoPunch : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.W))
+        Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red);
+
+        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        {
+            Grounded = true;
+        }
+        else Grounded = false;
+
+        if (Input.GetKeyDown(KeyCode.W) && Grounded)
         {
             Jump();
         }

@@ -9,7 +9,8 @@ public class DañoTrampa : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             Debug.Log("Daño Jugador");
-            Destroy(collision.gameObject);
+            collision.transform.GetComponent<PlayerRespawn>().Playerdamaged();
+
         }
     }
 }

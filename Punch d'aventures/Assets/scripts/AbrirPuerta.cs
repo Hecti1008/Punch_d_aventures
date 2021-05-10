@@ -14,7 +14,7 @@ public class AbrirPuerta : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Jugador"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             text.gameObject.SetActive(true);
             inDoor = true;

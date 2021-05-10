@@ -16,7 +16,7 @@ public class MovimientoPunch : MonoBehaviour
 
 
     //public bool variableJump = false;
-    //public float fallMultiplier = 0.5f;
+   // public float fallMultiplier = 0.5f;
     //public float lowJumpMultiplier = 1f;
 
 

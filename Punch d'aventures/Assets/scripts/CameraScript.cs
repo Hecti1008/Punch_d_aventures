@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public GameObject punch;
-
     void Update()
     {
         if (punch != null)

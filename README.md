@@ -1,3 +1,2 @@
-# Punch_d_aventures
+# Te la has comida
 El repositori on guardem el codic del joc
-#te la has comido xd

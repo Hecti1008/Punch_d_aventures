@@ -60,6 +60,16 @@ public class MovimientoPunch : MonoBehaviour
         if (CheckGround.isGrounded==true)
         {
             animator.SetBool("Jump", false);
+            animator.SetBool("Fall", false);
+        }
+
+        if (rb2D.velocity.y<0)
+        {
+            animator.SetBool("Fall", true);
+        }
+        else if (rb2D.velocity.y>0)
+        {
+            animator.SetBool("Fall", false);
         }
 
         //No el fem servir per que no ens ha agradat

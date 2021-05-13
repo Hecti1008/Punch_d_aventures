@@ -6003,7 +6003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1268577508}
-  levelNombre: 
+  levelNombre: Level3
 --- !u!61 &1985669714
 BoxCollider2D:
   m_ObjectHideFlags: 0

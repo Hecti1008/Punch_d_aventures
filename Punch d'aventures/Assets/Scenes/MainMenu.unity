@@ -582,7 +582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SALIR
+  m_Text: SORTIR
 --- !u!222 &697192063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -939,7 +939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: OPCIONES
+  m_Text: OPCIONS
 --- !u!222 &1159817666
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1359,7 +1359,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CREDITOS
+  m_Text: "CR\xC8DITS"
 --- !u!222 &1484101503
 CanvasRenderer:
   m_ObjectHideFlags: 0

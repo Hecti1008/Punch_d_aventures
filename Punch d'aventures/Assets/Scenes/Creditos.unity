@@ -451,8 +451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 51, y: -1681}
-  m_SizeDelta: {x: -1087.2761, y: 544.9387}
+  m_AnchoredPosition: {x: -9, y: -1370}
+  m_SizeDelta: {x: -714.218, y: 544.9387}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466169550
 MonoBehaviour:
@@ -487,10 +487,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "CREDITOS\n\nDirrector\nAyman Kaddar \nH\xE9ctor Garz\xF3n\n\nDise\xF1ador\nAyman
-    Kaddar \n\nEscritor\nH\xE9ctor Garz\xF3n\n\nProgramador\nAyman Kaddar \nH\xE9ctor
-    Garz\xF3n\n\r\nTestador:\nIan Lopez\nMarc Cozar\nAitor Pomer\nRaul Gimenez\nRaul
-    Garrido\r\nJoan Hurtado\n\nAgredecimientos\nPau Juanpere\nJoan Hurtado\nMaria
+  m_Text: "CR\xC8DITS\n\nDirector \nAyman Kaddar \nH\xE9ctor Garz\xF3n\n\nDise\xF1ador\nAyman
+    Kaddar \n\nEscriptor\nH\xE9ctor Garz\xF3n\n\nAnimacions\nAyman Kaddar \n\nProgramador\nAyman
+    Kaddar \nH\xE9ctor Garz\xF3n\n\r\nTesterr:\nIan Lopez\nMarc Cozar\nAitor Pumar\nRaul
+    Gimenez\nRaul Garrido\r\nJoan Hurtado\n\nAgra\xEFments\nPau Juanpere\nJoan Hurtado\nMaria
     Navarro\nIvan Casal\nAleix Perez\nDiego Mejias\n"
 --- !u!222 &1466169551
 CanvasRenderer:
@@ -546,9 +546,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 81e01a2ebfc1b524389f214cf8157c0d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.055
   m_Pitch: 1
   Loop: 0
   Mute: 0

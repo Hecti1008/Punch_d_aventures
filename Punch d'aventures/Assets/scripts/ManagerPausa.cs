@@ -21,6 +21,7 @@ public class ManagerPausa : MonoBehaviour
 
     public void menuButton()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Jugar");
     }
 
